@@ -8,11 +8,12 @@ use near_sdk::{near_bindgen, env};
 pub struct RockPaperScissorsGame {
     primary_commit: String,
     secondary_commit: String,
-    game_result: String
+    winner: i8,
+    phase: GamePhase
 }
 
 enum GamePhase {
-    Idle
+    Idle,
     FirstChoiceMade,
     SecondChoiceMade,
     Resolved
@@ -21,11 +22,11 @@ enum GamePhase {
 #[near_bindgen]
 impl RockPaperScissorsGame{
     // 0 = rock, 1 = paper, 2 = scissors :)
-    let stringChoices = ['rock', 'paper', 'scissors']
+    let stringChoices = ["rock", "paper", "scissors"]
 
-    pub fn new_game(&mut self){
+    pub fn new_game(&mut self, choice: String){
         // new game is started by a player comitting to a value, and placing a bet
-
+        
     }
     pub fn respond_game(&mut self){
 
